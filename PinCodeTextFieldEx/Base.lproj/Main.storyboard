@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PinCodeTextFieldEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rM-DW-CqD">
+                                <rect key="frame" x="152" y="220" width="70" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="0ap-D5-AVR"/>
+                                </constraints>
+                                <state key="normal" title="Print text"/>
+                                <connections>
+                                    <action selector="printTextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZn-uQ-ueX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq8-Pj-uYH">
+                                <rect key="frame" x="166" y="300" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-3O-XOU" customClass="CodeView" customModule="PinCodeTextFieldEx" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="402" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fg4-ik-gBz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="limit">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="margin">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2rM-DW-CqD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="4On-ec-6zu"/>
+                            <constraint firstItem="kcS-3O-XOU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7fG-Ya-cz3"/>
+                            <constraint firstItem="hq8-Pj-uYH" firstAttribute="top" secondItem="2rM-DW-CqD" secondAttribute="bottom" constant="50" id="EQK-bS-I9Q"/>
+                            <constraint firstItem="kcS-3O-XOU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SUE-pw-snR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kcS-3O-XOU" secondAttribute="bottom" constant="205" id="dcF-wd-Z11"/>
+                            <constraint firstItem="hq8-Pj-uYH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nCt-zS-lh1"/>
+                            <constraint firstItem="2rM-DW-CqD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qc4-EM-rvN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="codeView" destination="kcS-3O-XOU" id="Brr-YQ-Bqw"/>
+                        <outlet property="resultLabel" destination="hq8-Pj-uYH" id="Y4u-Yt-Gz2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
